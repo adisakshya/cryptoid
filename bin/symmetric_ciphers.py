@@ -1,11 +1,11 @@
 """
 MODULE NAME: symmetric_ciphers
+CONTENTS: -----------------------
 Author: Adisakshya Chauhan
-version: 1.2
 """
 
-# import module helper 
-from helper import *
+# import module helper_symmetric_ciphers 
+from helper_symmetric_ciphers import *
 
 # BLOCK CIPHERS
 """
@@ -156,7 +156,7 @@ class triple_des(object):
         try:
             
             # create new DES3 cipher
-            obj = create_instance(2, key, mode_no, iv)
+            obj = create_instance(3, key, mode_no, iv)
             
             # padding
             message = padding(message,8)
@@ -179,7 +179,7 @@ class triple_des(object):
         try:
             
             # create new DES3 cipher
-            obj = create_instance(2, key, mode_no, iv)
+            obj = create_instance(3, key, mode_no, iv)
             
             # return original message
             message =  get_original_message(obj,cipher_text)
@@ -393,7 +393,13 @@ class rc4(object):
         try:
             
             # create new ARC4 cipher
-            obj = create_instance_2(7, key)
+            try:
+            
+                obj = ciphers_stream[x].new(key.encode('utf-8'))
+        
+            except Exception:
+            
+                obj = ciphers_stream[x].new(key)
             
             # padding
             message = padding(message,1)
@@ -416,7 +422,13 @@ class rc4(object):
         try:
             
             # create new ARC4 cipher
-            obj = create_instance_2(7, key)
+            try:
+            
+                obj = ciphers_stream[x].new(key.encode('utf-8'))
+        
+            except Exception:
+            
+                obj = ciphers_stream[x].new(key)            
             
             # return original message
             message =  get_original_message(obj,cipher_text)
@@ -447,9 +459,9 @@ class salsa20(object):
     # function to return ciphertext
     def encrypt(message, secret):
         
-        cipher = Salsa20.new(key = secret)
-        msg = cipher.nonce + cipher.encrypt(message.encode('utf-8'))
-        return msg
+        obj = create_instance_2(2, secret, None)
+        cipher_text = obj.nonce + get_cipher_text(obj, message)
+        return cipher_text
 
     # function to decrypt ciphertext
     def decrypt(msg, secret):        
@@ -458,16 +470,15 @@ class salsa20(object):
 
             msg_nonce = msg[:8]
             cipher_text = msg[8:]
-            cipher = Salsa20.new(key=secret, nonce=msg_nonce)            
+            obj = create_instance_2(2, secret, msg_nonce)            
 
         except Exception:
 
             msg_nonce = msg[:16]
             cipher_text = msg[16:]
-            cipher = Salsa20.new(key=secret, nonce=msg_nonce)
-        
-        message = cipher.decrypt(cipher_text)
-        return message        
+            obj = create_instance_2(2, secret, msg_nonce)
+                
+        return get_original_message(obj, cipher_text)        
 
 """
 ChaCha20
@@ -483,15 +494,14 @@ class chacha20(object):
     # function to return ciphertext
     def encrypt(message, secret):
         
-        cipher = ChaCha20.new(key = secret)
-        msg = cipher.nonce + cipher.encrypt(message.encode('utf-8'))
-        return msg
+        obj = create_instance_2(3, secret, msg_nonce)
+        cipher_text = obj.nonce + get_cipher_text(obj, message)
+        return cipher_text
 
     # function to decrypt ciphertext
     def decrypt(msg, secret):        
         
         msg_nonce = msg[:8]
         cipher_text = msg[8:]
-        cipher = ChaCha20.new(key=secret, nonce=msg_nonce)
-        message = cipher.decrypt(cipher_text)
-        return message
+        obj = create_instance_2(2, secret, msg_nonce)
+        return get_original_message(obj, cipher_text)
