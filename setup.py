@@ -1,5 +1,5 @@
 """
-Module Name: setup.py
+Module Name: setup
 Author: Adisakshya Chauhan
 """
 try:
@@ -12,12 +12,12 @@ config = {
     'author': 'Adisakshya Chauhan',
     'url': 'URL to get it at.',
     'download_url': 'Where to download it.',
-    'author_email': 'adisakshya chauhan',
+    'author_email': 'adisakshya98@gmail.com',
     'version': '1.0',
     'install_requires': ['nose','Crypto'],
-    'packages': ['crypto'],
-    'scripts': ['bin/crypto.py'],
-    'name': 'crypto'
+    'packages': ['cryptoid'],
+    'scripts': ['bin/cryptoid.py'],
+    'name': 'cryptoid'
     }
 
 setup(**config)
