@@ -1,6 +1,5 @@
 """
 MODULE NAME: symmetric_ciphers
-CONTENTS: -----------------------
 Author: Adisakshya Chauhan
 """
 
@@ -21,6 +20,11 @@ BLOCK_SIZE: 16
 KEY_SIZE = (16, 24, 32)
 """
 class aes(object):
+
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [16, 24, 32]
 
     # functtion to generate key of length - (size) bytes
     def generate_key(size):
@@ -89,6 +93,11 @@ KEY_SIZE = 8
 """
 class des(object):
 
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [8]
+
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
 
@@ -149,6 +158,11 @@ BLOCK_SIZE: 8
 KEY_SIZE = (16, 24) ------ 8*3 == 24 -----------
 """
 class triple_des(object):
+
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [24]
 
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
@@ -211,6 +225,11 @@ KEY_SIZE: (5, 129)
 """
 class rc2(object):
 
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [x for x in range(5,130)]
+
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
 
@@ -270,6 +289,11 @@ BLOCK_SIZE: 8
 KEY_SIZE = (5, 17)
 """
 class cast(object):
+
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [x for x in range(5,18)]
 
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
@@ -332,6 +356,11 @@ KEY_SIZE = (5, 57)
 """
 class blowfish(object):
 
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [x for x in range(5,58)]
+
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
 
@@ -386,6 +415,11 @@ BLOCK_SIZE: 1
 KEY_SIZE = (16, 32)
 """
 class rc4(object):
+
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [x for x in range(16,32)]
 
     # function to return ciphertext
     def encrypt(message, key):
@@ -452,6 +486,11 @@ KEY_SIZE = 32
 """
 class salsa20(object):
 
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [32]
+
     def generate_key(size):
 
         return Salsa20.get_random_bytes(size)
@@ -487,6 +526,11 @@ KEY_SIZE = 32
 """
 class chacha20(object):
 
+    # function to return valid key size
+    def get_valid_key_size():
+
+        return [32]
+
     def generate_key(size):
 
         return ChaCha20.get_random_bytes(size)
@@ -504,4 +548,4 @@ class chacha20(object):
         msg_nonce = msg[:8]
         cipher_text = msg[8:]
         obj = create_instance_2(2, secret, msg_nonce)
-        return get_original_message(obj, cipher_text)
+        return get_original_message(obj, cipher_text)      
