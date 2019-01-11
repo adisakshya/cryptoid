@@ -91,8 +91,6 @@ class playfair_cipher(object):
             
             yield chunk
 
-
-
     def prepare_input(dirty):
         
         """
