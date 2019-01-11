@@ -1,6 +1,5 @@
 """
 MODULE NAME: helper_symmetric_ciphers
-CONTENTS: -----------------------
 Author: Adisakshya Chauhan
 """
 
