@@ -1,5 +1,5 @@
 """
-Module name: setup.py
+Module Name: setup.py
 Author: Adisakshya Chauhan
 """
 try:
