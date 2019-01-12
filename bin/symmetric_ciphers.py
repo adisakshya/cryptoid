@@ -25,13 +25,7 @@ class aes(object):
     def get_valid_key_size():
 
         return [16, 24, 32]
-
-    # functtion to generate key of length - (size) bytes
-    def generate_key(size):
-
-        # return generated key as byte object
-        return AES.get_random_bytes(size)
-
+    
     # function to return ciphertext
     def encrypt(message, key, mode_no=1, iv='This is an IV456'):
 
@@ -429,11 +423,11 @@ class rc4(object):
             # create new ARC4 cipher
             try:
             
-                obj = ciphers_stream[x].new(key.encode('utf-8'))
+                obj = ciphers_stream[1].new(key.encode('utf-8'))
         
             except Exception:
             
-                obj = ciphers_stream[x].new(key)
+                obj = ciphers_stream[1].new(key)
             
             # padding
             message = padding(message,1)
@@ -490,16 +484,12 @@ class salsa20(object):
     def get_valid_key_size():
 
         return [32]
-
-    def generate_key(size):
-
-        return Salsa20.get_random_bytes(size)
-
+        
     # function to return ciphertext
     def encrypt(message, secret):
         
         obj = create_instance_2(2, secret, None)
-        cipher_text = obj.nonce + get_cipher_text(obj, message)
+        cipher_text = get_cipher_text(obj, message)
         return cipher_text
 
     # function to decrypt ciphertext
@@ -531,15 +521,11 @@ class chacha20(object):
 
         return [32]
 
-    def generate_key(size):
-
-        return ChaCha20.get_random_bytes(size)
-
     # function to return ciphertext
     def encrypt(message, secret):
         
-        obj = create_instance_2(3, secret, msg_nonce)
-        cipher_text = obj.nonce + get_cipher_text(obj, message)
+        obj = create_instance_2(3, secret, None)
+        cipher_text = get_cipher_text(obj, message)
         return cipher_text
 
     # function to decrypt ciphertext
