@@ -9,6 +9,21 @@ from Crypto.Random import get_random_bytes
 
 op_formats = ["", "base64", "hex"]
 
+def save_result(text):
+
+	file_name = 'output.txt'
+	if input("\nWant to save result in a file? (Y/N) ") in ['y', 'Y']:
+		
+		file_name = input('Enter file name:(with extension) ')
+		f = open(file_name, 'w+')
+		f.write(text)
+
+def get_cipher():
+
+	print("Select Cipher: \n\t\t1. AES\n\t\t2. DES\n\t\t3. Triple DES\n\t\t4. RC2\n\t\t5. CAST\n\t\t6. Blowfish\n\t\t7. RC4\n\t\t8. Salsa20\n\t\t9. ChaCha20")
+	print("\n\t\t10. RSA\n\t\t11. Viginere Cipher\n\t\t12. Caesar Cipher\n\t\t13. --Playfair Cipher--\n\t\t14. Square Cipher\n\t\t15. --Serpant--")
+	return int(input('\nEnter cipher number -> '))
+
 def valid_key_size(cipher_no):
 
 	return list_symmetric_ciphers[cipher_no].get_valid_key_size()
@@ -16,6 +31,26 @@ def valid_key_size(cipher_no):
 def transform(cipher_text, op_format_no):
 
 	return codecs.encode(cipher_text, op_formats[op_format_no]).decode('utf-8')
+
+def get_mode():
+
+	print("Select operating mode\n\t\t1. Encryption\n\t\t2. Decryption")
+	return int(input('-> '))
+
+def get_key(cipher_no, valid_key_size_list):
+
+	print("\nValid key size(s): ", valid_key_size_list)
+	choice = input("Want a auto-generated key? (Y/N): ")
+
+	if choice in ['y', 'Y']:
+
+		key = get_random_bytes(valid_key_size_list[0])
+		print("Generated Key: ", key)
+		return key
+
+	else:
+
+		return input("Enter key: ")	
 
 def get_sym_cipher_text(message, cipher_no, mode_no=1, 
 			iv="This is an IV456", key="This is a key123", 
@@ -83,25 +118,6 @@ def get_asym_cipher_text(cipher_no, message, key=None,
 	except:
 		return cipher_text
 
-
-def get_mode():
-
-	print("Select operating mode\n\t\t1. Encryption\n\t\t2. Decryption")
-	return int(input('-> '))
-
-def get_key(cipher_no, valid_key_size_list):
-
-	print("\nValid key size(s): ", valid_key_size_list)
-	choice = input("Want a auto-generated key? (Y/N): ")
-
-	if choice in ['y', 'Y']:
-
-		return get_random_bytes(valid_key_size_list[0])
-
-	else:
-
-		return input("Enter key: ")	
-
 def sym_encryption(message, cipher_no):
 
 	print("\nEnter Mode: \n\t\t1. ECB\n\t\t2. CBC\n\t\t3. CFB\n\t\t4. OFB\n\t\t5. CTR\n\t\t6. EAX")
@@ -117,7 +133,7 @@ def sym_encryption(message, cipher_no):
 	print("\nEnter Encrypted output fromat: \n\t\t1.BASE64\n\t\t2. HEX")
 	op_format_no = int(input('\nEnter choice: '))
 
-	return get_sym_cipher_text(message, cipher_no, mode_no, iv, key, op_format_no)	
+	return get_sym_cipher_text(message, cipher_no, mode_no, iv, key, op_format_no)
 
 def asym_encryption(message, cipher_no):
 	
@@ -144,5 +160,5 @@ def asym_encryption(message, cipher_no):
 	op_format_no = int(input())
 
 	cipher_text = get_asym_cipher_text(cipher_no, message, key, shift_count, op_format_no)	
-
+	
 	return cipher_text
