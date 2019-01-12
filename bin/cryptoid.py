@@ -3,15 +3,13 @@ MODULE NAME: cryptoid
 Author: Adisakshya Chauhan
 """
 
-from helper import *
+from helper_cryptoid import *
 
 def encryption():
 
 	message = input('Enter Input Text: ')
 
-	print("Select Cipher: \n\t\t1. AES\n\t\t2. DES\n\t\t3. Triple DES\n\t\t4. RC2\n\t\t5. CAST\n\t\t6. Blowfish\n\t\t7. RC4\n\t\t8. Salsa20\n\t\t9. ChaCha20")
-	print("\n\t\t10. RSA\n\t\t11. Viginere Cipher\n\t\t12. Caesar Cipher\n\t\t13. --Playfair Cipher--\n\t\t14. Square Cipher\n\t\t15. --Serpant--")
-	cipher_no = int(input('\nEnter cipher number -> '))
+	cipher_no = get_cipher()
 
 	cipher_text = None
 	if cipher_no in range(1,10):
@@ -23,10 +21,28 @@ def encryption():
 		cipher_text = asym_encryption(message, cipher_no)
 			
 	print("Cipher-Text: ",cipher_text)
+	save_result(cipher_text)
 
 def decryption():
 	
-	pass	
+	if input('Have a file with ciphertext? (Y/N): ') in ['y', 'Y']:
+		file_name = input('Enter file name:(with extension) ')
+		f = open(filename, 'r')
+		cipher_text = f.read()
+	else:
+		cipher_text = input('Enter cipher-text: ')
+
+	cipher_no = get_cipher()	
+	if cipher_no in range(1,10):
+
+		message = sym_decryption(cipher_text, cipher_no)
+
+	else:
+
+		message = asym_decryption(cipher_text, cipher_no)	
+
+	print('Message: ', message)
+	save_result(cipher_text)
 
 def main():
 
