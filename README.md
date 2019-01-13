@@ -23,4 +23,4 @@ for secure communication in presence of third parties
                 This command will start the cryptographer
 
 ## Screenshots:
-                ![cryptoid AES encryption](https://github.com/adisakshya/cryptoid/blob/master/screenshots/image_1.png?raw=true)
+                ![cryptoid AES encryption](/screenshots/image_1.png)
