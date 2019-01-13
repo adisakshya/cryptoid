@@ -23,4 +23,4 @@ for secure communication in presence of third parties
                 This command will start the cryptographer
 
 ## Screenshots:
-                [[https://github.com/adisakshya/cryptoid/master/Screenshots/image_1.png|alt=octocat]]
+                [[https://github.com/adisakshya/cryptoid/blob/master/screenshots/image_1.png|alt=cryptoid]]
