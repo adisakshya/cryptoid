@@ -22,3 +22,6 @@ for secure communication in presence of third parties
                 
                 This command will start the cryptographer
 
+## Screenshots:
+                ![GitHub Logo](/images/logo.png)
+                Format: ![Alt Text](url)
