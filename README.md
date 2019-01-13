@@ -23,5 +23,7 @@ for secure communication in presence of third parties
                 This command will start the cryptographer
 
 ## Screenshots:
-                ![image](https://github.com/adisakshya/cryptoid/blob/master/screenshots/image_1.png?raw=true)
-                ![image](https://raw.githubusercontent.com/adisakshya/cryptoid/master/screenshots/image_1.png)
+                ![image]
+                (https://github.com/adisakshya/cryptoid/blob/master/screenshots/image_1.png?raw=true)
+                ![image]
+                (https://raw.githubusercontent.com/adisakshya/cryptoid/master/screenshots/image_1.png)
