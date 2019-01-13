@@ -2,4 +2,9 @@
 pycrypto is a simple python application that facilitates encryption and decryption
 for secure communication in presence of third parties
 
-# Marksdown 2
+## Installation Guide:
+
+  #### Step 1:
+                Open command-line / powershell in the pycrypto directory and run
+                `<addr>` element here instead.
+
