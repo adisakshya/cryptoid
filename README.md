@@ -23,4 +23,4 @@ for secure communication in presence of third parties
                 This command will start the cryptographer
 
 ## Screenshots:
-                [cryptoid](screenshots/image_1.png)
+                ![cryptoid](screenshots/image_1.png)
