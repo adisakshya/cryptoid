@@ -6,5 +6,5 @@ for secure communication in presence of third parties
 
   #### Step 1:
                 Open command-line / powershell in the pycrypto directory and run
-                `python3 setup.py`
+                <python3 setup.py>
 
