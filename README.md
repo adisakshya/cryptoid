@@ -23,4 +23,26 @@ for secure communication in presence of third parties
                 This command will start the cryptographer
 
 ## Screenshots:
-                ![image](https://github.com/adisakshya/cryptoid/blob/master/screenshots/image_1.png?raw=true)
+                ------------------------------------------
+
+
+## List of supported ciphers:
+                
+                Symmetric Ciphers:
+                    Advance Encryption Standard (AES)
+                    Data Encryption Standard (DES)
+                    Triple DES (DES3)
+                    RC2
+                    RC4
+                    CAST
+                    Blowfish
+                    Salsa20
+                    ChaCha20
+                
+                Asymmetric Ciphers:
+                    RC6
+                    Caesar Cipher
+                    Viginere Cipher
+                    Square Cipher
+                    Playfair Cipher
+                    Serpant                    
