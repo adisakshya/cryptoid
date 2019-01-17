@@ -1,7 +1,3 @@
-"""
-Module Name: setup
-Author: Adisakshya Chauhan
-"""
 try:
     from setuptools import setup
 except ImportError:
