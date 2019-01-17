@@ -10,8 +10,8 @@ except ImportError:
 config = {
     'description': 'cryptographer',
     'author': 'Adisakshya Chauhan',
-    'url': 'URL to get it at.',
-    'download_url': 'Where to download it.',
+    'url': 'https://github.com/adisakshya/cryptoid',
+    'download_url': 'https://github.com/adisakshya/cryptoid',
     'author_email': 'adisakshya98@gmail.com',
     'version': '1.0',
     'install_requires': ['nose','Crypto'],
