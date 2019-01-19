@@ -3,13 +3,13 @@
 
 Welcome to cryptoid repo!
 
-cryptoid is a simple python application that facilitates encryption and decryption
+cryptoid is a simple python cryptographer that facilitates encryption and decryption
 for secure communication in presence of third parties
 
 ## Installation
 
 ### Step 1: 
-Download the repository using github or git eg.git clone https://github.com/adisakshya/keylogger
+Download the repository using github or git eg.git clone https://github.com/adisakshya/cryptoid
 
 ### Step 2: 
 Install the modules by running `python -m pip install requirements.txt`
