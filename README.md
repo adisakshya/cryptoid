@@ -12,17 +12,17 @@ for secure communication in presence of third parties
 Download the repository using github or git eg.git clone https://github.com/adisakshya/cryptoid
 
 ### Step 2: 
-Install the modules by running `python -m pip install requirements.txt`
+Install the modules by running `pip install -r requirements.txt`
 
 ### Step 3: 
-Install the script by running `python setup.py install`
+Install the script by running `py setup.py install`
 
 ---
 ## How to run it?
 
 Just type: 
 ```
-cryptoid
+cryptoid.py
 ```
 
 Now cryptoid is up and running!
