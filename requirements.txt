@@ -1,5 +1,2 @@
 Crypto
-codecs
-string
 setuptools
-distutils
