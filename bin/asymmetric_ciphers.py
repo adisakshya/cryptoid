@@ -80,15 +80,40 @@ class caesar_cipher(object):
                 cipher_text += chr((ord(char) + s-65) % 26 + 65) 
   
             # Encrypt lowercase characters 
-            else: 
+            elif char == ' ':
+                
+                cipher_text += ' '
+            
+            else:
                 
                 cipher_text += chr((ord(char) + s - 97) % 26 + 97) 
   
         return cipher_text
 
-    def decrypt(cipher_text, s):
-
-        pass    
+    def decrypt(message,s): 
+        
+        cipher_text = "" 
+  
+        # traverse text 
+        for i in range(len(message)): 
+            
+            char = message[i] 
+  
+            # Encrypt uppercase characters 
+            if (char.isupper()): 
+                
+                cipher_text += chr((ord(char) - s-65) % 26 + 65) 
+  
+            # Encrypt lowercase characters 
+            elif char == ' ':
+                
+                cipher_text += ' '
+            
+            else:    
+                
+                cipher_text += chr((ord(char) - s - 97) % 26 + 97) 
+  
+        return cipher_text       
 
 """
 PlayFair Cipher
