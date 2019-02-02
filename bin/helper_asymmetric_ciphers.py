@@ -12,6 +12,5 @@ import string
 
 # list of all supported ciphers
 """
-ciphers = ['', RSA, viginere_cipher, caesar_cipher, 
-				playfair_cipher, square_cipher, serpant_cipher]
+ciphers = ['', RSA, viginere_cipher, caesar_cipher]
 """				
