@@ -6,6 +6,10 @@ Welcome to cryptoid repo!
 cryptoid is a simple python cryptographer that facilitates encryption and decryption
 for secure communication in presence of third parties
 
+## Screenshot
+
+# ![cryptoid](https://raw.githubusercontent.com/adisakshya/cryptoid/master/screenshots/image_1.png)
+
 ## Installation
 
 ### Step 1: 
