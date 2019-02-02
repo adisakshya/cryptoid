@@ -113,18 +113,4 @@ class caesar_cipher(object):
                 
                 cipher_text += chr((ord(char) - s - 97) % 26 + 97) 
   
-        return cipher_text       
-
-"""
-PlayFair Cipher
-"""
-
-class playfair_cipher(object):   
-    
-    def encrypt():
-
-        pass
-
-    def decrypt():
-
-        pass
+        return cipher_text
