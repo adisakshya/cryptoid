@@ -80,76 +80,37 @@ class caesar_cipher(object):
                 cipher_text += chr((ord(char) + s-65) % 26 + 65) 
   
             # Encrypt lowercase characters 
-            else: 
+            elif char == ' ':
+                
+                cipher_text += ' '
+            
+            else:
                 
                 cipher_text += chr((ord(char) + s - 97) % 26 + 97) 
   
         return cipher_text
 
-    def decrypt(cipher_text, s):
-
-        pass    
-
-"""
-PlayFair Cipher
-"""
-
-class playfair_cipher(object):   
-    
-    def encrypt():
-
-        pass
-
-    def decrypt():
-
-        pass
-
-"""
-Polybius Square Cipher
-"""
-class polybius_square_cipher(object):
-    
-    def encrypt(s):
-
-        # convert each character to its encrypted code 
-        for char in s: 
-              
-                # finding row of the table 
-                row = int((ord(char) - ord('a')) / 5) + 1
-          
-                # finding column of the table  
-                col = ((ord(char) - ord('a')) % 5) + 1
+    def decrypt(message,s): 
+        
+        cipher_text = "" 
   
-                # if character is 'k' 
-                if char == 'k': 
-        
-                        row = row - 1
-                        col = 5 - col + 1
-                          
-                # if character is greater than 'j' 
-                elif ord(char) >= ord('j'): 
-        
-                        if col == 1 : 
-                            col = 6
-                            row = row - 1
-                              
-                        col = col - 1
-                          
-                print(row, col, end ='', sep ='')
-
-    def decrypt(cipher_text):
-
-        pass            
-
-"""
-Serpant Cipher
-"""
-class serpant(object):
-    
-    def encrypt(message):
-
-        pass
-
-    def decrypt(message):
-
-        pass
+        # traverse text 
+        for i in range(len(message)): 
+            
+            char = message[i] 
+  
+            # Encrypt uppercase characters 
+            if (char.isupper()): 
+                
+                cipher_text += chr((ord(char) - s-65) % 26 + 65) 
+  
+            # Encrypt lowercase characters 
+            elif char == ' ':
+                
+                cipher_text += ' '
+            
+            else:    
+                
+                cipher_text += chr((ord(char) - s - 97) % 26 + 97) 
+  
+        return cipher_text

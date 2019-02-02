@@ -6,6 +6,10 @@ Welcome to cryptoid repo!
 cryptoid is a simple python cryptographer that facilitates encryption and decryption
 for secure communication in presence of third parties
 
+## Screenshot
+
+# ![cryptoid](https://raw.githubusercontent.com/adisakshya/cryptoid/master/screenshots/image_1.png)
+
 ## Installation
 
 ### Step 1: 
@@ -46,10 +50,7 @@ Now cryptoid is up and running!
    
         RC6
         Caesar Cipher
-        Viginere Cipher
-        Square Cipher
-        Playfair Cipher
-        Serpant                    
+        Viginere Cipher          
 ---
 ## List of supported output formats:
 
@@ -58,8 +59,9 @@ Now cryptoid is up and running!
 
 ---
 ### To-Do
-  1. script for decryption
-  2. GUI
+  1. Add GUI interface
+  2. Play-Fair cipher
+  3. Square Cipher
 
 Feel free to contribute to fix any problems, or to submit an issue!
 
